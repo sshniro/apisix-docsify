@@ -44,7 +44,6 @@
     - [Response Rewrite](plugins/response-rewrite.md)
     - [GRPC Transcoding](plugins/grpc-transcode.md)
     
-  
   - Security
     
     -  [Consumer Restriction](plugins/consumer-restriction.md)
@@ -56,8 +55,8 @@
 
 - Installation
 
-  - [](how-to-build.md)
+  - [How to build](how-to-build.md)
 
 - Admin API
 
-  - [](admin-api.md)  
+  - [Admin API](admin-api.md)  
