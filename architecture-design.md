@@ -197,7 +197,7 @@ The plugin configuration is submitted as part of Route or Service and placed und
 
 Not all plugins have specific configuration items. For example, there is no specific configuration item under `prometheus`. In this case, an empty object identifier can be used.
 
-[APISIX supported plugin list](README.md#plugins)
+[APISIX supported plugin list](introduction.md#plugins)
 
 [Back to top](#Table-of-contents)
 
