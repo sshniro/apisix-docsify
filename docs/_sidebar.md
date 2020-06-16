@@ -1,6 +1,6 @@
 - Introduction
 
-  - [Introduction](introduction.md)
+  - [Introduction](README.md)
   
 - Getting started
   
