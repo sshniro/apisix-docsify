@@ -34,7 +34,7 @@
 
 ### 插件加载流程
 
-![插件加载流程](./images/flow-load-plugin.png)
+![插件加载流程](images/flow-load-plugin.png)
 
 ### 插件内部结构
 
@@ -490,7 +490,7 @@ APISIX 区别于其他 API 网关的一大特点是允许用户选择不同 Rout
 
 <img src="./images/consumer-internal.png" width="50%" height="50%">
 
-1. 授权认证：比如有 [key-auth](./plugins/key-auth.md)、[JWT](./plugins/jwt-auth-cn.md) 等。
+1. 授权认证：比如有 [key-auth](./plugins/key-auth.md)、[JWT](plugins/jwt-auth-cn.md) 等。
 2. 获取 consumer_id：通过授权认证，即可自然获取到对应的 Consumer `id`，它是 Consumer 对象的唯一识别标识。
 3. 获取 Consumer 上绑定的 Plugin 或 Upstream 信息：完成对不同 Consumer 做不同配置的效果。
 
@@ -548,7 +548,7 @@ HTTP/1.1 503 Service Temporarily Unavailable
 
 ```
 
-结合 [consumer-restriction](./plugins/consumer-restriction-cn.md) 插件，限制jack对该 route 的访问
+结合 [consumer-restriction](plugins/consumer-restriction-cn.md) 插件，限制jack对该 route 的访问
 
 # 设置黑名单，禁止jack访问该API
 $ curl http://127.0.0.1:9080/apisix/admin/routes/1 -H 'X-API-KEY: edd1c9f034335f136f87ad84b625c8f1' -X PUT -d '

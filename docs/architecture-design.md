@@ -21,7 +21,7 @@
 
 ### Plugin Loading Process
 
-![flow-load-plugin](./images/flow-load-plugin.png)
+![flow-load-plugin](images/flow-load-plugin.png)
 
 ### Plugin Hierarchy Structure
 
@@ -463,7 +463,7 @@ In APISIX, the process of identifying a Consumer is as follows:
 
 <img src="./images/consumer-internal.png" width="50%" height="50%">
 
-1. Authorization certification: e.g [key-auth](./plugins/key-auth.md), [JWT](./plugins/jwt-auth.md), etc.
+1. Authorization certification: e.g [key-auth](plugins/key-auth.md), [JWT](plugins/jwt-auth.md), etc.
 2. Get consumer_id: By authorization, you can naturally get the corresponding Consumer `id`, which is the unique identifier of the Consumer object.
 3. Get the Plugin or Upstream information bound to the Consumer: Complete the different configurations for different Consumers.
 
@@ -471,7 +471,7 @@ To sum up, Consumer is a consumer of certain types of services and needs to be u
 
 For example, different consumers request the same API, and the gateway service corresponds to different Plugin or Upstream configurations according to the current request user information.
 
-In addition, you can refer to the [key-auth](./plugins/key-auth.md) authentication authorization plugin call logic to help you further understand the Consumer concept and usage.
+In addition, you can refer to the [key-auth](plugins/key-auth.md) authentication authorization plugin call logic to help you further understand the Consumer concept and usage.
 
 How to enable a specific plugin for a Consumer, you can see the following example:
 
@@ -522,7 +522,7 @@ HTTP/1.1 503 Service Temporarily Unavailable
 
 ```
 
-Use the [consumer-restriction](./plugins/consumer-restriction-cn.md) plug-in to restrict the access of Jack to this API.
+Use the [consumer-restriction](plugins/consumer-restriction-cn.md) plug-in to restrict the access of Jack to this API.
 
 # Add Jack to the blacklist
 $ curl http://127.0.0.1:9080/apisix/admin/routes/1 -H 'X-API-KEY: edd1c9f034335f136f87ad84b625c8f1' -X PUT -d '
