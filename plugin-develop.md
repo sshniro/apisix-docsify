@@ -16,6 +16,16 @@
 # limitations under the License.
 #
 -->
+[中文](zh-cn/plugin-develop.md)
+
+# table of contents
+
+- [**check dependencies**](#check-dependencies)
+- [**name and config**](#name-and-config)
+- [**schema and check**](#schema-and-check)
+- [**choose phase to run**](#choose-phase-to-run)
+- [**implement the logic**](#implement-the-logic)
+- [**write test case**](#write-test-case)
 
 ## check dependencies
 

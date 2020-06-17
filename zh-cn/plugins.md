@@ -17,7 +17,7 @@
 #
 -->
 
-[English](plugins.md)
+[English](../plugins.md)
 
 ## 热加载
 

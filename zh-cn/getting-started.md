@@ -16,6 +16,7 @@
 # limitations under the License.
 #
 -->
+[English](../getting-started.md)
 
 # 快速入门指南
 
@@ -42,7 +43,7 @@ $ curl --location --request GET "https://httpbin.org/get?foo1=bar1&foo2=bar2"
 
 ## 第一步: 安装 APISIX
 
-Apache APISIX 可以多种操作环境中安装。[如何安装文档](how-to-build-cn.md#installation-via-source-release) 显示了多个平台中的安装步骤。
+Apache APISIX 可以多种操作环境中安装。[如何安装文档](how-to-build.md#installation-via-source-release) 显示了多个平台中的安装步骤。
 为了快速入门，让我们基于 docker 容器的安装方式进行安装。启动 Apache APISIX 服务，我们可以参照这个镜像文件[repository](https://github.com/apache/incubator-apisix-docker) 并切换到 example 文件夹下执行如下命令。
 
 如下命令会启动 Apache APISIX 服务并默认在 9080 端口（ https 请求是 9443 端口） 提供 admin API 接口服务
@@ -239,7 +240,7 @@ curl -i -X GET http://127.0.0.1:9080/samplePrefix/get?param1=foo&param2=bar -H '
 到目前为止，已经通过使用 admin API 接口编排对 Apache APISIX 的 API 的调用。然而，Apache APISIX 还提供执行类似操作的一个 web 应用，就是web控制台。
 可以在[repository](https://github.com/apache/incubator-apisix)中使用。控制台是直观的，您可以通过它编排同样的路由配置。
 
-![Dashboard](images/dashboard.png)
+![Dashboard](../images/dashboard.png)
 
 ### 故障排查
 

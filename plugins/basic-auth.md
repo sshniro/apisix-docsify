@@ -17,6 +17,16 @@
 #
 -->
 
+# [Chinese](../zh-cn/plugins/basic-auth.md)
+
+# Summary
+
+- [**Name**](#name)
+- [**Attributes**](#attributes)
+- [**How To Enable**](#how-to-enable)
+- [**Test Plugin**](#test-plugin)
+- [**Disable Plugin**](#disable-plugin)
+
 ## Name
 
 `basic-auth` is an authentication plugin that need to work with `consumer`. Add Basic Authentication to a `service` or `route`.

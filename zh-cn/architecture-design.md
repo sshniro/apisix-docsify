@@ -34,7 +34,7 @@
 
 ### 插件加载流程
 
-![插件加载流程](images/flow-load-plugin.png)
+![插件加载流程](../images/flow-load-plugin.png)
 
 ### 插件内部结构
 
@@ -105,7 +105,7 @@ Server: APISIX web server
 
 当我们接收到成功应答，表示该 Route 已成功创建。
 
-有关 Route 的具体选项，可具体查阅 [Admin API 之 Route](admin-api-cn.md#route)。
+有关 Route 的具体选项，可具体查阅 [Admin API 之 Route](admin-api.md#route)。
 
 [返回目录](#目录)
 
@@ -193,7 +193,7 @@ curl http://127.0.0.1:9080/apisix/admin/routes/102 -H 'X-API-KEY: edd1c9f034335f
 优先级更高。
 
 一个插件在一次请求中只会执行一次，即使被同时绑定到多个不同对象中（比如 Route 或 Service）。
-插件运行先后顺序是根据插件自身的优先级来决定的，例如：[example-plugin](../apisix/plugins/example-plugin.lua#L37)。
+插件运行先后顺序是根据插件自身的优先级来决定的，例如：[example-plugin](../../apisix/plugins/example-plugin.lua#L37)。
 
 插件配置作为 Route 或 Service 的一部分提交的，放到 `plugins` 下。它内部是使用插件
 名字作为哈希的 key 来保存不同插件的配置项。
@@ -239,11 +239,11 @@ APISIX 的 Upstream 除了基本的复杂均衡算法选择外，还支持对上
 |-------         |-----|------|
 |type            |必填|`roundrobin` 支持权重的负载，`chash` 一致性哈希，两者是二选一的|
 |nodes           |与 `k8s_deployment_info`、 `service_name` 三选一|哈希表，内部元素的 key 是上游机器地址列表，格式为`地址 + Port`，其中地址部分可以是 IP 也可以是域名，比如 `192.168.1.100:80`、`foo.com:80` 等。value 则是节点的权重。当权重值为 `0` 代表该上游节点失效，不会被选中，可以用于暂时摘除节点的情况。|
-|service_name    |与 `nodes`、 `k8s_deployment_info` 三选一 |用于设置上游服务名，并配合注册中心使用，详细可参考[集成服务发现注册中心](discovery-cn.md) |
+|service_name    |与 `nodes`、 `k8s_deployment_info` 三选一 |用于设置上游服务名，并配合注册中心使用，详细可参考[集成服务发现注册中心](discovery.md) |
 |k8s_deployment_info|与 `nodes`、 `service_name` 三选一|哈希表|字段包括 `namespace`、`deploy_name`、`service_name`、`port`、`backend_type`，其中 `port` 字段为数值，`backend_type` 为 `pod` 或 `service`，其他为字符串 |
 |key             |可选|在 `type` 等于 `chash` 是必选项。 `key` 需要配合 `hash_on` 来使用，通过 `hash_on` 和 `key` 来查找对应的 node `id`|
 |hash_on         |可选|`hash_on` 支持的类型有 `vars`（Nginx内置变量），`header`（自定义header），`cookie`，`consumer`，默认值为 `vars`|
-|checks          |可选|配置健康检查的参数，详细可参考[health-check](health-check.md)|
+|checks          |可选|配置健康检查的参数，详细可参考[health-check](../health-check.md)|
 |retries         |可选|使用底层的 Nginx 重试机制将请求传递给下一个上游，默认 APISIX 会启用重试机制，根据配置的后端节点个数设置重试次数，如果此参数显式被设置将会覆盖系统默认设置的重试次数。|
 |enable_websocket|可选| 是否启用 `websocket`（布尔值），默认不启用|
 
@@ -353,7 +353,7 @@ curl http://127.0.0.1:9080/apisix/admin/routes/1 -H 'X-API-KEY: edd1c9f034335f13
 }'
 ```
 
-更多细节可以参考[健康检查的文档](health-check.md)。
+更多细节可以参考[健康检查的文档](../health-check.md)。
 
 下面是几个使用不同`hash_on`类型的配置示例：
 
@@ -460,7 +460,7 @@ APISIX 区别于其他 API 网关的一大特点是允许用户选择不同 Rout
 在本地配置 `conf/config.yaml` 中设置最符合自身业务需求的路由。
 
 * `apisix.router.http`: HTTP 请求路由。
-    * `radixtree_uri`: （默认）只使用 `uri` 作为主索引。基于 `radixtree` 引擎，支持全量和深前缀匹配，更多见 [如何使用 router-radixtree](router-radixtree.md)。
+    * `radixtree_uri`: （默认）只使用 `uri` 作为主索引。基于 `radixtree` 引擎，支持全量和深前缀匹配，更多见 [如何使用 router-radixtree](../router-radixtree.md)。
         * `绝对匹配`：完整匹配给定的 `uri` ，比如 `/foo/bar`，`/foo/glo`。
         * `前缀匹配`：末尾使用 `*` 代表给定的 `uri` 是前缀匹配。比如 `/foo*`，则允许匹配 `/foo/`、`/foo/a`和`/foo/b`等。
         * `匹配优先级`：优先尝试绝对匹配，若无法命中绝对匹配，再尝试前缀匹配。
@@ -490,14 +490,14 @@ APISIX 区别于其他 API 网关的一大特点是允许用户选择不同 Rout
 
 <img src="./images/consumer-internal.png" width="50%" height="50%">
 
-1. 授权认证：比如有 [key-auth](./plugins/key-auth.md)、[JWT](plugins/jwt-auth-cn.md) 等。
+1. 授权认证：比如有 [key-auth](../plugins/key-auth.md)、[JWT](plugins/jwt-auth.md) 等。
 2. 获取 consumer_id：通过授权认证，即可自然获取到对应的 Consumer `id`，它是 Consumer 对象的唯一识别标识。
 3. 获取 Consumer 上绑定的 Plugin 或 Upstream 信息：完成对不同 Consumer 做不同配置的效果。
 
 概括一下，Consumer 是某类服务的消费者，需与用户认证体系配合才能使用。
 比如不同的 Consumer 请求同一个 API，网关服务根据当前请求用户信息，对应不同的 Plugin 或 Upstream 配置。
 
-此外，大家也可以参考 [key-auth](./plugins/key-auth.md) 认证授权插件的调用逻辑，辅助大家来进一步理解 Consumer 概念和使用。
+此外，大家也可以参考 [key-auth](../plugins/key-auth.md) 认证授权插件的调用逻辑，辅助大家来进一步理解 Consumer 概念和使用。
 
 如何对某个 Consumer 开启指定插件，可以看下面例子：
 
@@ -548,7 +548,7 @@ HTTP/1.1 503 Service Temporarily Unavailable
 
 ```
 
-结合 [consumer-restriction](plugins/consumer-restriction-cn.md) 插件，限制jack对该 route 的访问
+结合 [consumer-restriction](plugins/consumer-restriction.md) 插件，限制jack对该 route 的访问
 
 # 设置黑名单，禁止jack访问该API
 $ curl http://127.0.0.1:9080/apisix/admin/routes/1 -H 'X-API-KEY: edd1c9f034335f136f87ad84b625c8f1' -X PUT -d '

@@ -17,6 +17,17 @@
 #
 -->
 
+[Chinese](authz-keycloak-cn.md)
+
+# Summary
+- [**Name**](#name)
+- [**Attributes**](#attributes)
+- [**How To Enable**](#how-to-enable)
+- [**Test Plugin**](#test-plugin)
+- [**Disable Plugin**](#disable-plugin)
+- [**Examples**](#examples)
+
+
 ## Name
 
 `authz-keycloak` is an authorization plugin to be used with the Keycloak Identity Server. Keycloak is an OAuth/OIDC and

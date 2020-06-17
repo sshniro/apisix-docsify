@@ -1,17 +1,32 @@
-- Introduction
-
-  - [Introduction](README.md)
-  
 - Getting started
   
+  - [Introduction](README.md)
   - [Quick start](getting-started.md)
 
-- Core
+- General
 
   - [Architecture](architecture-design.md)
+  
+  - [Benchmark](benchmark.md)
+  
+  - Installation
+    
+     - [How to build](how-to-build.md)
+     - [Install Dependencies](install-dependencies.md)
+    
+  - [HTTPS](https.md)    
+    
+  - [Router](router-radixtree.md)
+    
   - Plugins
-   - [Develop Plugins](plugin-develop.md)
-   - [Hot Reload](plugins.md)
+    
+    - [Develop Plugins](plugin-develop.md)
+    - [Hot Reload](plugins.md)
+    
+  - Proxy Modes
+    
+    - [GRPC Proxy](grpc-proxy.md)
+    - [Stream Proxy](stream-proxy.md)    
 
 - Plugins
 
@@ -19,6 +34,7 @@
     
     - [Key Auth](plugins/key-auth.md)
     - [Basic Auth](plugins/basic-auth.md)
+    - [JWT Auth](plugins/jwt-auth.md)
     - [Opend ID Connect](plugins/oauth.md)
     
   - Loggers
@@ -37,11 +53,19 @@
   
   - General
   
+    - [Redirect](plugins/redirect.md)
+    - [Serverless](plugins/serverless.md)
     - [Batch Request](plugins/batch-requests.md)
+    - [Fault Injection](plugins/fault-injection.md)
+    - [MQTT Proxy](plugins/mqtt-proxy.md)
+    - [Proxy Cache](plugins/proxy-cache.md)
+    - [Proxy Mirror](plugins/proxy-mirror.md)
+    - [Echo](plugins/echo.md)
   
   - Transformations
   
     - [Response Rewrite](plugins/response-rewrite.md)
+    - [Proxy Rewrite](plugins/proxy-rewrite.md)
     - [GRPC Transcoding](plugins/grpc-transcode.md)
     
   - Security
@@ -51,11 +75,10 @@
     -  [Limit Count](plugins/limit-count.md)
     -  [Limit Request](plugins/limit-req.md)
     -  [CORS](plugins/cors.md)
-    -  [Keycloak Authorizattion](plugins/authz-keycloak.md)
+    -  [IP Restriction](plugins/ip-restriction.md)
+    -  [Keycloak Authorization](plugins/authz-keycloak.md)
+    -  [RBAC Wolf](plugins/wolf-rbac.md)
 
-- Installation
-
-  - [How to build](how-to-build.md)
 
 - Admin API
 
