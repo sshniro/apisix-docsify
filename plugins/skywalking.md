@@ -116,9 +116,9 @@ Then add skywalking plugin:\
         http://10.110.149.175:8080/
         ```
         You can see the topology of all service\
-        ![](../images/plugin/skywalking-4.png)\
+        ![](../../doc/images/plugin/skywalking-4.png)\
         You can also see the tracer of all service\
-        ![](../images/plugin/skywalking-5.png)
+        ![](../../doc/images/plugin/skywalking-5.png)
 
 ## Disable Plugin
 

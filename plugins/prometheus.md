@@ -79,9 +79,9 @@ scrape_configs:
 
 And we can check the status at prometheus console:
 
-![](../images/plugin/prometheus01.png)
+![](../../doc/images/plugin/prometheus01.png)
 
-![](../images/plugin/prometheus02.png)
+![](../../doc/images/plugin/prometheus02.png)
 
 
 ### Grafana dashboard
@@ -90,11 +90,11 @@ Metrics exported by the plugin can be graphed in Grafana using a drop in dashboa
 
 You can goto [Grafana meta](https://grafana.com/grafana/dashboards/11719) for `Grafana` meta data.
 
-![](../images/plugin/grafana_1.png)
+![](../../doc/images/plugin/grafana_1.png)
 
-![](../images/plugin/grafana_2.png)
+![](../../doc/images/plugin/grafana_2.png)
 
-![](../images/plugin/grafana_3.png)
+![](../../doc/images/plugin/grafana_3.png)
 
 ### Available metrics
 

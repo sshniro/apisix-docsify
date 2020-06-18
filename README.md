@@ -16,7 +16,7 @@
 # limitations under the License.
 #
 -->
-[Chinese](zh-cn/README.md)
+[Chinese](./zh-cn/README.md)
 
 Reference Documentation
 ==================
